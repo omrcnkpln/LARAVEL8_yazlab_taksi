@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/anasayfa', [HomeController::class, 'index'])->name('anasayfa');
+
+Route::get('/send-location', [HomeController::class, 'sendLocation'])->name('send-locations');
+
+Route::middleware('auth')->prefix('profile')->group(function () {
+    Route::get('/', [HomeController::class, 'profile'])->name('profile');
 });
