@@ -12,6 +12,6 @@ class CarLocation extends Model
 {
 //    use HasFactory;
     protected $connection = 'mongodb';
-    protected $table = "CarLocations";
-    protected $fillable = ["desc"];
+    protected $table = "car_locations";
+    protected $fillable = ["car_id", "x", "y", "date"];
 }

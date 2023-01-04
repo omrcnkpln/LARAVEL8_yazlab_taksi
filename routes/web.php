@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,14 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [HomeController::class, 'index'])->name('anasayfa');
 Route::get('/anasayfa', [HomeController::class, 'index'])->name('anasayfa');
 
 Route::get('/send-location', [HomeController::class, 'sendLocation'])->name('send-locations');
 
-Route::middleware('auth')->prefix('profile')->group(function () {
-    Route::get('/', [HomeController::class, 'profile'])->name('profile');
+Route::middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('profile-get');
+    Route::post('/', [AdminController::class, 'konumGetir'])->name('profile-post');
 });

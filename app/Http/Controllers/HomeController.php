@@ -11,8 +11,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        echo "selam";
-
 //        $user = User::all();
 
 //        Helper::Pr($user->all());
@@ -27,7 +25,7 @@ class HomeController extends Controller
     public function sendLocation(){
         $locs = new CarLocation();
 
-        $locs->desc = 'deneme metnidir';
+        $locs->car_id = 'deneme metnidir';
 
         $locs->save();
     }
