@@ -96,13 +96,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-        ],
-
-        'mongodb' => [
-            'driver' => 'mongodb',
-            'dsn' => env('DB_URI', 'mongodb+srv://username:password@<atlas-cluster-uri>/myappdb?retryWrites=true&w=majority'),
-            'database' => 'myappdb',
-        ],
+        ]
     ],
 
     /*

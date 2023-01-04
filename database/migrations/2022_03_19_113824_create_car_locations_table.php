@@ -13,7 +13,7 @@ class CreateCarLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::connection("mongodb")->create('CarLocations', function (Blueprint $table) {
+        Schema::connection("mongodb")->create('car_locations', function (Blueprint $table) {
             $table->id();
             $table->string('desc')->nullable();
             $table->timestamps();
